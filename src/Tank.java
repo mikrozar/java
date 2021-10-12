@@ -2,6 +2,8 @@ public class Tank {
     private int x, y;
     private int dir;
     private int fuel;
+    private String model;
+    private static int number = 0;
 
     public void goForward(int i) {
         switch (dir) {
@@ -23,7 +25,7 @@ public class Tank {
     }
 
     public void printPosition() {
-        System.out.println("The Tank is at " + x +", " + y + " now.");
+        System.out.println("The Tank " + model + " is at " + x +", " + y + " now.");
     }
 
     public void turnLeft() {
@@ -70,20 +72,28 @@ public class Tank {
     }
 
     public Tank() {
+        name();
         x = 0;
         y = 0;
         fuel = 100;
     }
 
     public Tank(int x, int y, int fuel) {
+        name();
         this.x = x;
         this.y = y;
         this.fuel = fuel;
     }
 
     public Tank(int x, int y) {
+        name();
         this.x = x;
         this.y = y;
         fuel = 100;
+    }
+
+    public String name() {
+        number++;
+        return model = "T34-"+number;
     }
 }
