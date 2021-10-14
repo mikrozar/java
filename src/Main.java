@@ -10,13 +10,15 @@ with fuel and different constructors
         Tank anywareTank = new Tank(10, 10);
         // At (20;30) fuel=200
         Tank customTank = new Tank(20, 30, 200);
-        justTank.goForward(200);
+        justTank.goForward(30);
         justTank.printPosition();
         anywareTank.goBackward(-200);
         anywareTank.printPosition();
         customTank.goForward(201);
         customTank.printPosition();
-
+        justTank.refill("54 литров солярки");
+        anywareTank.refill("?");
+        customTank.refill("?");
 
 /*
 This fragment of code has to output
@@ -27,5 +29,4 @@ The Tank is at 220, 30 now.
 
 */
     }
-
 }

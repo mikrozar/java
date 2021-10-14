@@ -1,9 +1,15 @@
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import static java.lang.Integer.parseInt;
+
 public class Tank {
     private int x, y;
     private int dir;
     private int fuel;
     private String model;
     private static int number = 0;
+    static int fillFuel = 0;
     //коммент
     public void goForward(int i) {
         switch (dir) {
@@ -56,6 +62,20 @@ public class Tank {
         return direction;
     }
 
+    public void refill (String what) {
+        Pattern pattern = Pattern.compile("([0-9]+)");
+        if (what=="?") {
+            System.out.println("В баке танка " + model + " " + fuel + " литров");
+        } else {
+            Matcher matcher = pattern.matcher(what);
+            if (matcher.find()) {
+                fillFuel = parseInt(matcher.group(1));
+                fuel += fillFuel;
+                System.out.println("Заправка танка " + model + " на " + fillFuel + " произведена. В баке " + fuel + " литров");
+            }
+        }
+    }
+
     public int checkFuel2(int direction, int steps) {
         return checkFuel2(direction, -steps);
       /*if ((steps<fuel)&&(steps>0)) {
@@ -96,4 +116,5 @@ public class Tank {
         number++;
         return model = "T34-"+number;
     }
+
 }
