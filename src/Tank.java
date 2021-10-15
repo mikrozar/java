@@ -9,7 +9,7 @@ public class Tank {
     private int fuel;
     private String model;
     private static int number = 0;
-    static int fillFuel = 0;
+    private static int fillFuel = 0;
     //коммент
     public void goForward(int i) {
         switch (dir) {
