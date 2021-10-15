@@ -63,15 +63,23 @@ public class Tank {
     }
 
     public void refill (String what) {
-        Pattern pattern = Pattern.compile("([0-9]+)");
+        Pattern pattern = Pattern.compile("(-[0-9]+)");
         if (what=="?") {
             System.out.println("В баке танка " + model + " " + fuel + " литров");
         } else {
             Matcher matcher = pattern.matcher(what);
             if (matcher.find()) {
-                fillFuel = parseInt(matcher.group(1));
-                fuel += fillFuel;
-                System.out.println("Заправка танка " + model + " на " + fillFuel + " произведена. В баке " + fuel + " литров");
+                //fillFuel = parseInt(matcher.group(1));
+                //fuel += fillFuel;
+                System.out.println("На заправке сливать топливо из танка " + model + " запрещено");
+            } else {
+                Pattern pattern1 = Pattern.compile("([0-9]+)");
+                Matcher matcher1 = pattern1.matcher(what);
+                if (matcher1.find()) {
+                    fillFuel = parseInt(matcher1.group(1));
+                    fuel += fillFuel;
+                    System.out.println("Заправка танка " + model + " на " + fillFuel + " произведена. В баке " + fuel + " литров");
+                }
             }
         }
     }
