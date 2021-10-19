@@ -18,7 +18,7 @@ public class StringBuilder1 {
             }
             j += 1;
         }
-        return c;
+        return c;///
     }
 
     static void finding(StringBuilder stroka) {
