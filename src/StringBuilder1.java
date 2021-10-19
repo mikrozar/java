@@ -19,6 +19,7 @@ public class StringBuilder1 {
             j += 1;
         }
         return c;
+        //branch1
     }
 
     static void finding(StringBuilder stroka) {
