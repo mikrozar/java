@@ -1,5 +1,11 @@
 public class Main {
     public static void main(String[] args) {
+
+        Car mazda = new Car();
+        mazda.start();
+        Car bmw = new Car("BMW", 250, true, 15);
+        System.out.println(bmw.carSpeed(10));
+
 /*
 Make (add code to class Tank),
 with fuel and different constructors
