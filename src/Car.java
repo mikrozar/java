@@ -1,4 +1,4 @@
-public class Car {
+public class Car extends Transport implements Rideable {
     String marka;
     int horsePower;
     boolean isAwd;
@@ -18,6 +18,7 @@ public class Car {
         this.horsePower = horsePower;
         this.isAwd = isAwd;
         this.acceleration = acceleration;
+        type = "Car";
         System.out.println("My car is " + this.marka);
     }
 
@@ -32,5 +33,11 @@ public class Car {
 
     public float carSpeed (float time) {
         return (100/acceleration)*time;
+
+    }
+
+    @Override
+    public void ride() {
+        System.out.println("rideable");
     }
 }
